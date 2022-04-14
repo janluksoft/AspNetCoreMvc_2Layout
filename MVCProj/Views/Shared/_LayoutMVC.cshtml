@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link REL="stylesheet" HREF="~/estyl.css" TYPE="text/css">
+    <title>@ViewBag.Title</title>
+    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+</head>
+<body style="background-color:#fef9e8">
+
+    <div class="divGreen">[_LayoutMVC.cshtml] Title: @ViewBag.Title</div>
+    <div class="divGreen">Header of template [_LayoutMVC.cshtml] page</div>
+
+    <div style="padding: 10px;">
+
+        <table border="0" cellpadding="10" cellspacing="4">
+            <tr>
+                <td id="tabela" width="140px">
+                    Menu from template <br /><br />
+
+                    <p id="linkb"><a href="/Home/Index">Home</a></p>
+                    <p id="linkb"><a href="/Home/Page2">Page 2</a></p>
+                    <p id="linkb"><a href="/Home/TagHelper">Link http</a></p>
+                    <p id="linkb">
+                        <!--below linking mechanism: TagHelper -->
+                        <a asp-area="" asp-controller="Home" asp-action="TagHelper">
+                            Link helper
+                        </a>
+                    </p>
+                    <!-- <p id="linkb">Without link</p> -->
+                </td>
+                <td class="divRBody">
+                    <div>Page from RenderBody()</div>
+                    @RenderBody()
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="divGreen">Footer of template [_LayoutMVC.cshtml] page</div>
+
+</body>
+</html>
